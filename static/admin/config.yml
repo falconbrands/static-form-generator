@@ -3,7 +3,7 @@ backend:
 publish_mode: editorial_workflow
 media_folder: static/uploads
 show_preview_links: true
-preview_path: "{{slug/}}"
+preview_path: "/{{slug}}"
 collections:
   - label: "Pages"
     name: "pages"
