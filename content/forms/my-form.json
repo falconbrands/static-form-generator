@@ -1,0 +1,14 @@
+{
+  "path": "my-form",
+  "sheet": "Sheet1",
+  "masthead": "Dope masthead shit here waw.",
+  "fields": [
+    {
+      "name": "email",
+      "label": "Email",
+      "required": true,
+      "type": "email",
+      "width": "is-full"
+    }
+  ]
+}
