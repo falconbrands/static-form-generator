@@ -2,11 +2,15 @@ backend:
   name: git-gateway
 publish_mode: editorial_workflow
 media_folder: static/uploads
+show_preview_links: false
 collections:
   - label: "Pages"
     name: "pages"
     folder: "content/pages"
     create: true
+    format: json
+    identifier_field: slug
     fields:
+      - {label: "Slug", name: "slug", widget: "string"}
       - {label: "Title", name: "title", widget: "string"}
       - {label: "Intro", name: "intro", widget: "string"}
