@@ -15,6 +15,7 @@ export interface AirtableData {
     // if (!!context.payload) return context.payload
 
     // return require('~/content/forms/' + context.params.slug + '.json')
+    return {}
   }
 })
 export default class FormPage extends Vue implements AirtableData {
