@@ -10,7 +10,7 @@ collections:
     folder: "content/pages"
     create: true
     format: json
-    preview_path: {{slug}}
+    preview_path: /{{slug}}
     identifier_field: slug
     fields:
       - {label: "Slug", name: "slug", widget: "string"}
