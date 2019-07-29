@@ -4,6 +4,20 @@
   "masthead": "Dope masthead shit here waw.",
   "fields": [
     {
+      "name": "first name",
+      "label": "First name",
+      "required": true,
+      "type": "text",
+      "width": "is-half"
+    },
+    {
+      "name": "last name",
+      "label": "Last name",
+      "required": false,
+      "type": "text",
+      "width": "is-half"
+    },
+    {
       "name": "email",
       "label": "Email",
       "required": true,
