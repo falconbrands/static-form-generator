@@ -12,9 +12,9 @@ export interface AirtableData {
 
 @Component({
   asyncData (context) {
-    if (!!context.payload) return context.payload
+    // if (!!context.payload) return context.payload
 
-    return require('~/content/forms/' + context.params.slug + '.json')
+    // return require('~/content/forms/' + context.params.slug + '.json')
   }
 })
 export default class FormPage extends Vue implements AirtableData {

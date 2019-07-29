@@ -14,6 +14,7 @@ collections:
     identifier_field: slug
     fields:
       - {label: "URL", name: "url", widget: "string", hint: "/$URL_VALUE_HERE"}
+      - {label: "Airtable Name", name: "table", widget: "string"}
       - {label: "Masthead", name: "masthead", widget: "markdown"}
       - {label: "Background image", name: "backgroundImage", widget: "image", required: false}
       - {label: "Background color", name: "backgroundColor", widget: "string", required: false}
@@ -23,6 +24,11 @@ collections:
         fields:
         - {label: "Label", name: "label", widget: "string"}
         - {label: "Name", name: "name", widget: "string"}
+        - label: "Type"
+          name: "type"
+          widget: "select"
+          options: ["text", "number"],
+          default: ["text"]
         - label: "Width"
           name: "width"
           widget: "select"
