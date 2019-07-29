@@ -5,12 +5,11 @@
     "dev": "nuxt",
     "build": "nuxt generate"
   },
-  "dependencies": {
-    "netlify-cms": "^2.9.0"
-  },
+  "dependencies": {},
   "devDependencies": {
-    "@nuxt/typescript": "^2.5.1",
-    "nuxt": "^2.5.1",
+    "@nuxt/typescript": "^2.7.1",
+    "nuxt": "^2.7.1",
+    "ts-node": "^8.3.0",
     "vue-property-decorator": "^7.3.0"
   }
 }
