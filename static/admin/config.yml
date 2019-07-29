@@ -5,16 +5,28 @@ media_folder: static/uploads
 show_preview_links: true
 
 collections:
-  - label: "Pages"
-    name: "pages"
-    folder: "content/pages"
+  - label: "Forms"
+    name: "forms"
+    folder: "content/forms"
     create: true
     format: json
     preview_path: /{{slug}}
     identifier_field: slug
     fields:
-      - {label: "Slug", name: "slug", widget: "string"}
-      - {label: "Title", name: "title", widget: "string"}
-      - {label: "Intro", name: "intro", widget: "string"}
-editor:
-     preview: false
+      - {label: "URL", name: "url", widget: "string", hint: "/$URL_VALUE_HERE"}
+      - {label: "Masthead", name: "masthead", widget: "markdown"}
+      - {label: "Background image", name: "backgroundImage", widget: "image", required: false}
+      - {label: "Background color", name: "backgroundColor", widget: "string", required: false}
+      - label: "Fields"
+        name: "fields"
+        widget: "list"
+        fields:
+        - {label: "Label", name: "label", widget: "string"}
+        - {label: "Name", name: "name", widget: "string"}
+        - label: "Width"
+          name: "width"
+          widget: "select"
+          options: ["is-three-quarters", "is-two-thirds", "is-half", "is-one-third", "is-one-quarter", "is-full"],
+          default: ["is-full"]
+    editor:
+        preview: false

@@ -5,7 +5,7 @@ import path from 'path'
 const config: NuxtConfiguration = {
   generate: {
     async routes () {
-      const PAGES_DIR = './content/pages'
+      const PAGES_DIR = './content/forms'
 
       // create absolute file paths
       const filenames = fs.readdirSync(PAGES_DIR).map((filename) => {
@@ -19,49 +19,11 @@ const config: NuxtConfiguration = {
       }))
 
       return routes
-
-
-
-
-      // console.log(filenames)
-
-      // const list = (dirname: string) => new Promise<string[]>((resolve, reject) => {
-      //   fs.readdir(dirname, (error, files) => {
-      //     if (error) return reject(error)
-
-      //     const filenames = files.map((file) => path.resolve(PAGES_DIR, file))
-
-      //     resolve(filenames)
-      //   })
-      // })
-
-      // const read = (filename: string) => new Promise<any>((resolve, reject) => {
-      //   fs.readFile(filename, 'utf8', (error, data) => {
-      //     if (error) return reject(error)
-      //     resolve(JSON.parse(data))
-      //   })
-      // })
-
-      // const contents = await list(PAGES_DIR)
-      // const pages = await Promise.all(contents.map(read))
-
-
-      // const routes = pages.map((page) => ({
-      //   route: page.slug,
-      //   payload: page,
-      // }))
-
-
-      // console.log(routes)
-
-      return []
     }
-  }
-  // modules: [
-  //   ['~/modules/shopify', {
-  //     foo: 'bar'
-  //   }]
-  // ]
+  },
+  modules: [
+    '@nuxtjs/dotenv',
+  ],
   // generate: {
   //   async routes () {
   //     // const products = await shopify.product.fetchAll()
