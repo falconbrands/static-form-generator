@@ -1,5 +1,5 @@
 <template>
-  <div>this is a slug!</div>
+  <div>{{ title }}</div>
 </template>
 
 <script lang="ts">
@@ -8,9 +8,9 @@ import { mapState } from 'vuex'
 
 @Component({
   asyncData (context) {
-    console.log(context)
+    if (!!context.payload) return context.payload
 
-    return { foo: 'bar' }
+    return require('~/content/pages/' + context.params.slug + '.json')
   }
 })
 export default class SlugPage extends Vue {
