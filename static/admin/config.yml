@@ -14,16 +14,18 @@ collections:
     identifier_field: slug
     fields:
       - {label: "URL", name: "url", widget: "string", hint: "/$URL_VALUE_HERE"}
-      - {label: "Airtable Name", name: "table", widget: "string"}
+      - {label: "Google Sheet", name: "sheet", widget: "string"}
       - {label: "Masthead", name: "masthead", widget: "markdown"}
       - {label: "Background image", name: "backgroundImage", widget: "image", required: false}
       - {label: "Background color", name: "backgroundColor", widget: "string", required: false}
       - label: "Fields"
         name: "fields"
         widget: "list"
+        required: true
         fields:
+        - {label: "Name", name: "name", widget: "string", hint: "Must relate to a column header on target Google Sheet."}
         - {label: "Label", name: "label", widget: "string"}
-        - {label: "Name", name: "name", widget: "string"}
+        - {label: "Required", name: "required", widget: "boolean"}
         - label: "Type"
           name: "type"
           widget: "select"
