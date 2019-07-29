@@ -13,7 +13,7 @@ export class GoogleSheetsService {
   }
 
   public submit = async (data: FormData): Promise<true> => {
-    const response = await this.client.post('/', data)
+    const response = await this.client.post('', data)
 
     if (!!response.data.error) {
       throw new Error(response.data.error)

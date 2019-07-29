@@ -3,3 +3,8 @@
     <nuxt/>
   </div>
 </template>
+
+<style lang="scss">
+@import "bulma";
+
+</style>
