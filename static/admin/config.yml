@@ -27,12 +27,12 @@ collections:
         - label: "Type"
           name: "type"
           widget: "select"
-          options: ["text", "number"],
+          options: ["text", "number"]
           default: ["text"]
         - label: "Width"
           name: "width"
           widget: "select"
-          options: ["is-three-quarters", "is-two-thirds", "is-half", "is-one-third", "is-one-quarter", "is-full"],
+          options: ["is-three-quarters", "is-two-thirds", "is-half", "is-one-third", "is-one-quarter", "is-full"]
           default: ["is-full"]
     editor:
         preview: false
