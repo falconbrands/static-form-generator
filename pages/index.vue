@@ -9,7 +9,7 @@ import { mapState } from 'vuex'
 @Component({
   asyncData () {
     return {
-      content: require('~/content/about.json')
+      content: false //require('~/content/about.json')
     }
   },
   head () {
