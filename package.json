@@ -5,7 +5,9 @@
     "dev": "nuxt",
     "build": "nuxt generate"
   },
-  "dependencies": {},
+  "dependencies": {
+    "airtable": "^0.7.0"
+  },
   "devDependencies": {
     "@nuxt/typescript": "^2.7.1",
     "nuxt": "^2.7.1",
