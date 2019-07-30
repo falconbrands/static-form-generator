@@ -1,13 +1,13 @@
 <template>
   <div class="form-page">
-    <div class="art section is-hidden-mobile">
+    <div class="art section is-hidden-mobile" :style="artStyles">
       <img class="logo" v-if="config.logo" :src="config.logo"/>
     </div>
     <div class="contents section">
       <transition name="fade" mode="out-in" appear>
         <div class="content form-container" key="form" v-if="!state.submissionSuccess">
           <h1 class="title is-size-3 is-size-2-widescreen">{{ config.title }}</h1>
-          <p class="subtitle is-size-6" v-html="descriptionHTML" v-if="config.description"></p>
+          <div class="subtitle is-size-6" v-html="descriptionHTML" v-if="config.description"></div>
           <form class="form" @submit.prevent="submit">
             <div class="columns is-multiline">
               <div class="column" :class="field.width" v-for="field in config.fields" :key="field.name">
@@ -61,7 +61,7 @@ export default class FormPage extends Vue {
     return markdown.toHTML(this.config.successMessage)
   }
 
-  get mastheadStyles () {
+  get artStyles () {
     return {
       backgroundColor: this.config.backgroundColor,
       backgroundImage: `url(${this.config.backgroundImage})`,
