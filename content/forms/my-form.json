@@ -1,8 +1,8 @@
 {
   "path": "my-form",
   "sheet": "Sheet1",
-  "masthead": "Dope **masthead** shit here waw.\n\n![](/static/uploads/product_2.png)",
-  "backgroundColor": "#9c8b70",
+  "masthead": "Dope **masthead** shit here waw.\n\n```\n<h5>So what does this dooo???</h5>\n```\n\n![](/static/uploads/product_2.png)",
+  "backgroundColor": "",
   "fields": [
     {
       "name": "first name",
@@ -20,7 +20,7 @@
     },
     {
       "name": "email",
-      "label": "Email",
+      "label": "Email address",
       "required": true,
       "type": "email",
       "width": "is-full"
