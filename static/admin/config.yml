@@ -1,9 +1,9 @@
 backend:
   name: git-gateway
-publish_mode: editorial_workflow
+# publish_mode: editorial_workflow
 media_folder: static/uploads
 public_folder: uploads
-show_preview_links: true
+show_preview_links: false
 
 collections:
   - label: "Forms"
@@ -22,7 +22,7 @@ collections:
       - {label: "Background color", name: "backgroundColor", widget: "string", required: false}
       - {label: "Logo", name: "logo", widget: "image", required: false}
       - {label: "Button color", name: "buttonColor", widget: "string", required: false}
-      - {label: "Success message", name: "successMessage", widget: "string", default: "Success!"}
+      - {label: "Success message", name: "successMessage", widget: "markdown", default: "Success!"}
       - label: "Fields"
         name: "fields"
         widget: "list"

@@ -3,8 +3,6 @@ import fs from 'fs'
 import path from 'path'
 import dotenv from 'dotenv'
 
-
-
 export interface FormConfig {
   fields: any[]
   masthead: string
@@ -37,10 +35,7 @@ const config: NuxtConfiguration = {
       return routes
     }
   },
-  env: dotenv.config().parsed
-  // modules: [
-  //   '@nuxtjs/dotenv',
-  // ],
+  env: dotenv.config().parsed,
 }
 
 export default config
