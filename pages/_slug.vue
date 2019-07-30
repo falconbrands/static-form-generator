@@ -5,7 +5,7 @@
     </div>
     <div class="contents section">
       <img class="logo" v-if="config.logo" :src="config.logo"/>
-      <transition name="fade" mode="out-in" appear>
+      <transition name="fade" mode="out-in" appear v-cloak>
         <div class="content form-container" key="form" v-if="!state.submissionSuccess">
           <h1 class="title is-size-3 is-size-2-widescreen">{{ config.title }}</h1>
           <div class="subtitle is-size-6" v-html="descriptionHTML" v-if="config.description"></div>

@@ -30,8 +30,16 @@ $input-focus-box-shadow-size: 0;
 
 @import "bulma";
 
+input, button {
+  transition: all 0.3s;
+}
+
 .input:focus {
   background-color: #eee;
+}
+
+[v-cloak] {
+  display:none;
 }
 </style>
 
