@@ -2,7 +2,7 @@
   <page-layout>
     <template v-slot:masthead v-if="config.masthead">
       <div class="masthead" :style="mastheadStyles">
-        <!-- <div class="masthead-content" v-html="mastheadHTML"></div> -->
+        <div class="masthead-content" v-html="mastheadHTML"></div>
       </div>
     </template>
     <template v-slot:content>

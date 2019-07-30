@@ -23,9 +23,7 @@ const config: NuxtConfiguration = {
       // generate route objects from file paths
       const routes = filenames.map((filename: string) => ({
         route: path.basename(filename, '.json'), // path is assumed to be in the format [slug].json
-        payload: {
-          config: JSON.parse(fs.readFileSync(filename, 'utf8')),
-        }
+        payload: JSON.parse(fs.readFileSync(filename, 'utf8')),
       }))
 
       return routes
