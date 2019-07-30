@@ -3,6 +3,7 @@
   "sheet": "Sheet1",
   "title": "Want some CRU swag?",
   "description": "Enter below and follow us on the 'gram! Winners picked weekly!",
+  "backgroundImage": "/uploads/olia-bondarenko-bnrnyyoolb0-unsplash.jpg",
   "successMessage": "Success!",
   "fields": [
     {
