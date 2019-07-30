@@ -14,11 +14,15 @@ collections:
     preview_path: /{{slug}}
     identifier_field: path
     fields:
-      - {label: "Path", name: "path", widget: "string", hint: "http://falconbrands.com/$PATH"}
+      - {label: "Path", name: "path", widget: "string", hint: "http://signup.falconbrands.com/$PATH"}
       - {label: "Google Sheet ID", name: "sheet", widget: "string"}
-      - {label: "Masthead content", name: "masthead", widget: "markdown", required: false}
-      - {label: "Masthead background image", name: "backgroundImage", widget: "image", required: false}
-      - {label: "Masthead background color", name: "backgroundColor", widget: "string", required: false}
+      - {label: "Title", name: "title", widget: "string"}
+      - {label: "Description", name: "description", widget: "markdown", required: false}
+      - {label: "Background image", name: "backgroundImage", widget: "image", required: false}
+      - {label: "Background color", name: "backgroundColor", widget: "string", required: false}
+      - {label: "Logo", name: "logo", widget: "image", required: false}
+      - {label: "Button color", name: "buttonColor", widget: "string", required: false}
+      - {label: "Success message", name: "successMessage", widget: "string", default: "Success!"}
       - label: "Fields"
         name: "fields"
         widget: "list"

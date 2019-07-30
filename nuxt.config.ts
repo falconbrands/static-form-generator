@@ -10,7 +10,12 @@ export interface FormConfig {
   masthead: string
   path: string
   sheet: string
+  description?: string
   backgroundColor?: string
+  backgroundImage?: string
+  buttonColor?: string
+  logo?: string
+  successMessage: string
 }
 
 const config: NuxtConfiguration = {

@@ -6,9 +6,12 @@
     "build": "nuxt generate"
   },
   "dependencies": {
+    "@pake/react-color": "^3.0.0",
     "axios": "^0.19.0",
     "bulma": "^0.7.5",
-    "markdown": "^0.5.0"
+    "markdown": "^0.5.0",
+    "netlify-cms": "^2.9.7",
+    "netlify-cms-widget-color": "^3.0.1"
   },
   "devDependencies": {
     "@nuxt/typescript": "^2.7.1",

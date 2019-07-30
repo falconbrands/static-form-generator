@@ -1,46 +1,14 @@
 <template>
-  <page-layout>
-    <template v-slot:masthead v-if="config.masthead">
-      <div class="masthead" :style="mastheadStyles">
-        <div class="masthead-content" v-html="mastheadHTML"></div>
-      </div>
-    </template>
-    <template v-slot:content>
-      <div class="main-content">
-        <transition name="fade" mode="out-in">
-          <div class="form-state" v-if="!state.submissionSuccess" key="active">
-            <form @submit.prevent="submit">
-              <div class="columns is-multiline">
-                <div class="column" :class="field.width" v-for="field in config.fields" :key="field.name">
-                  <div class="field">
-                    <label class="label">{{ field.label }}</label>
-                    <input class="input" v-model="form[field.name]" :type="field.type" :required="field.required"/>
-                  </div>
-                </div>
-              </div>
-              <div class="field submit">
-                <div class="control">
-                  <button class="button is-black is-fullwidth" :class="buttonClass">Submit</button>
-                </div>
-              </div>
-            </form>
-          </div>
-          <div class="success-state section is-size-5 has-text-centered has-text-weight-bold" v-else key="inactive">
-            Submitted successfully!
-          </div>
-        </transition>
-      </div>
-    </template>
-  </page-layout>
-
-  <!-- <div class="form-view">
-    <div class="masthead" :style="mastheadStyles">
-      <div class="masthead-content" v-html="mastheadHTML"></div>
+  <div class="form-page">
+    <div class="art section is-hidden-mobile">
+      <img class="logo" v-if="config.logo" :src="config.logo"/>
     </div>
-    <div class="form-container">
-      <transition>
-        <div class="form-state" v-if="!state.submissionSuccess">
-          <form @submit.prevent="submit">
+    <div class="contents section">
+      <transition name="fade" mode="out-in" appear>
+        <div class="content form-container" key="form" v-if="!state.submissionSuccess">
+          <h1 class="title is-size-3 is-size-2-widescreen">{{ config.title }}</h1>
+          <p class="subtitle is-size-6" v-html="descriptionHTML" v-if="description"></p>
+          <form class="form" @submit.prevent="submit">
             <div class="columns is-multiline">
               <div class="column" :class="field.width" v-for="field in config.fields" :key="field.name">
                 <div class="field">
@@ -49,29 +17,28 @@
                 </div>
               </div>
             </div>
-            <button class="button is-fullwidth" :class="buttonClass">Submit</button>
+            <div class="field submit">
+              <div class="control">
+                <button class="button is-primary is-fullwidth" :class="buttonClass">Submit</button>
+              </div>
+            </div>
           </form>
         </div>
-        <div class="success-state" v-else>
-          Success bitches.
+        <div class="content" key="success" v-else v-html="successHTML">
+        
         </div>
       </transition>
-    
     </div>
-  </div> -->
+  </div>
 </template>
 
 <script lang="ts">
 import { Component, Vue } from 'vue-property-decorator'
 import { FormConfig } from '~/nuxt.config.ts'
-import PageLayout from '~/layouts/page.vue'
 import submission from '~/services/form-submission'
 import { markdown } from 'markdown'
 
 @Component({
-  components: {
-    PageLayout
-  },
   asyncData (context) {
     return {
       config: !!context.payload ? context.payload : require(`~/content/forms/${context.params.slug}.json`)
@@ -86,14 +53,18 @@ export default class FormPage extends Vue {
     return submission.state
   }
 
-  get mastheadHTML () {
-    return markdown.toHTML(this.config.masthead)
+  get descriptionHTML () {
+    return markdown.toHTML(this.config.description)
+  }
+
+  get successHTML () {
+    return markdown.toHTML(this.config.successMessage)
   }
 
   get mastheadStyles () {
     return {
       backgroundColor: this.config.backgroundColor,
-      backgroundImage: '',
+      backgroundImage: `url(${this.config.backgroundImage})`,
     }
   }
 
@@ -126,42 +97,47 @@ export default class FormPage extends Vue {
 </script>
 
 <style lang="scss" scoped>
-// .form-view {
-//   // min-height: 100vh;
-//   // display: flex;
-//   // align-items: center;
-//   // justify-content: center;
-  
-// }
-
-.main-content {
-  width: 100%;
-  padding: 60px 20px;
-  max-width: 560px;
-  margin: 0px auto;
-  // margin: -20px auto 0;
-  // background: #fff;
-  // border-radius: 3px;
-  // border: 1px solid #eee;
+.form-page {
+  display: flex;
+  min-height: 100vh;
 }
 
-.masthead {
+.art {
+  background: #fafafa;
+  min-width: 50%;
+  background-size: cover;
+  background-repeat: no-repeat;
+}
+
+.contents {
+  position: relative;
+  background: #fff;
+  flex: 1;
   display: flex;
   align-items: center;
   justify-content: center;
-  width: 100%;
-  min-height: 250px;
-  background: #eee;
-  color: #fff;
+  min-height: 600px;
+  padding-left: 3em;
+  padding-right: 3em;
 }
 
-input, button {
-  transition: all 0.3s;
+.form-container {
+  max-width: 500px;
+}
+
+.form {
+  padding-top: 30px;
+}
+
+.logo {
+  position: absolute;
+  top: 2em;
+  left: 2em;
 }
 
 .label {
   text-transform: uppercase;
-  font-size: 0.7em;
+  font-size: 0.65em;
   letter-spacing: 0.8px;
 }
 
@@ -172,6 +148,7 @@ input, button {
 .fade-enter-active {
   animation: fade-in .5s;
 }
+
 .fade-leave-active {
   animation: fade-in .5s reverse;
 }
