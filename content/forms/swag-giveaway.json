@@ -1,0 +1,30 @@
+{
+  "path": "swag-giveaway",
+  "sheet": "Sheet1",
+  "title": "Want some CRU swag?",
+  "description": "Enter below and follow us on the 'gram! Winners picked weekly!",
+  "successMessage": "Success!",
+  "fields": [
+    {
+      "name": "first name",
+      "label": "First name",
+      "required": true,
+      "type": "text",
+      "width": "is-half"
+    },
+    {
+      "name": "last name",
+      "label": "Last name",
+      "required": true,
+      "type": "text",
+      "width": "is-half"
+    },
+    {
+      "name": "email",
+      "label": "Email address",
+      "required": true,
+      "type": "email",
+      "width": "is-full"
+    }
+  ]
+}
