@@ -2,7 +2,7 @@ backend:
   name: git-gateway
 publish_mode: editorial_workflow
 media_folder: static/uploads
-public_folder: /
+public_folder: /uploads
 show_preview_links: true
 
 collections:
@@ -14,7 +14,7 @@ collections:
     preview_path: /{{slug}}
     identifier_field: path
     fields:
-      - {label: "Path", name: "path", widget: "string"}
+      - {label: "Path", name: "path", widget: "string", hint: "http://falconbrands.com/$PATH"}
       - {label: "Google Sheet ID", name: "sheet", widget: "string"}
       - {label: "Masthead content", name: "masthead", widget: "markdown", required: false}
       - {label: "Masthead background image", name: "backgroundImage", widget: "image", required: false}

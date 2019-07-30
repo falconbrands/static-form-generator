@@ -1,6 +1,9 @@
 import NuxtConfiguration from '@nuxt/config'
 import fs from 'fs'
 import path from 'path'
+import dotenv from 'dotenv'
+
+
 
 export interface FormConfig {
   fields: any[]
@@ -29,9 +32,10 @@ const config: NuxtConfiguration = {
       return routes
     }
   },
-  modules: [
-    '@nuxtjs/dotenv',
-  ],
+  env: dotenv.config().parsed
+  // modules: [
+  //   '@nuxtjs/dotenv',
+  // ],
 }
 
 export default config
