@@ -1,5 +1,13 @@
 <template>
-  <nuxt/>
+  <div class="site-content">
+    <div class="masthead-container">
+      <slot name="masthead"></slot>
+    </div>
+    <div class="main-container">
+      <slot name="content"></slot>
+    </div>
+    <site-footer />
+  </div>
 </template>
 
 <script lang="ts">
@@ -11,17 +19,10 @@ import SiteFooter from '~/components/SiteFooter.vue'
     SiteFooter,
   }
 })
-export default class DefaultLayout extends Vue {
+export default class PageLayout extends Vue {
  
 }
 </script>
-
-<style lang="scss">
-$input-shadow: 0;
-$family-sans-serif: 'Roboto', BlinkMacSystemFont, -apple-system, "Segoe UI", "Roboto", "Oxygen", "Ubuntu", "Cantarell", "Fira Sans", "Droid Sans", "Helvetica Neue", "Helvetica", "Arial", sans-serif;
-
-@import "bulma";
-</style>
 
 <style lang="scss" scoped>
 .site-content {

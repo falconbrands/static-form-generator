@@ -7,6 +7,7 @@ export interface FormConfig {
   masthead: string
   path: string
   sheet: string
+  backgroundColor?: string
 }
 
 const config: NuxtConfiguration = {

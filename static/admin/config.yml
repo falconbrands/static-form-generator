@@ -15,16 +15,16 @@ collections:
     fields:
       - {label: "Path", name: "path", widget: "string"}
       - {label: "Google Sheet ID", name: "sheet", widget: "string"}
-      - {label: "Masthead", name: "masthead", widget: "markdown"}
-      - {label: "Background image", name: "backgroundImage", widget: "image", required: false}
-      - {label: "Background color", name: "backgroundColor", widget: "string", required: false}
+      - {label: "Masthead content", name: "masthead", widget: "markdown", required: false}
+      - {label: "Masthead background image", name: "backgroundImage", widget: "image", required: false}
+      - {label: "Masthead background color", name: "backgroundColor", widget: "string", required: false}
       - label: "Fields"
         name: "fields"
         widget: "list"
         fields:
         - {label: "Name", name: "name", widget: "string", hint: "Must relate to a column header on target Google Sheet."}
         - {label: "Label", name: "label", widget: "string"}
-        - {label: "Required", name: "required", widget: "boolean"}
+        - {label: "Required", name: "required", widget: "boolean", required: false}
         - label: "Type"
           name: "type"
           widget: "select"
