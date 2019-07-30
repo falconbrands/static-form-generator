@@ -7,7 +7,7 @@
       <transition name="fade" mode="out-in" appear>
         <div class="content form-container" key="form" v-if="!state.submissionSuccess">
           <h1 class="title is-size-3 is-size-2-widescreen">{{ config.title }}</h1>
-          <p class="subtitle is-size-6" v-html="descriptionHTML" v-if="description"></p>
+          <p class="subtitle is-size-6" v-html="descriptionHTML" v-if="config.description"></p>
           <form class="form" @submit.prevent="submit">
             <div class="columns is-multiline">
               <div class="column" :class="field.width" v-for="field in config.fields" :key="field.name">
@@ -90,6 +90,7 @@ export default class FormPage extends Vue {
   }
 
   protected mounted () {
+    console.log(this.config)
     this.reset()
   }
 
@@ -121,13 +122,18 @@ export default class FormPage extends Vue {
   padding-right: 3em;
 }
 
+.subtitle {
+  padding-top: 0.5em;
+  padding-bottom: 2em;
+}
+
 .form-container {
   max-width: 500px;
 }
 
-.form {
-  padding-top: 30px;
-}
+// .form {
+//   padding-top: 30px;
+// }
 
 .logo {
   position: absolute;
