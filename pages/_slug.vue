@@ -24,7 +24,7 @@
             </div>
           </form>
         </div>
-        <div class="content" key="success" v-else v-html="successHTML">
+        <div class="content success-container" key="success" v-else v-html="successHTML">
         
         </div>
       </transition>
@@ -151,18 +151,38 @@ export default class FormPage extends Vue {
   padding-top: 15px;
 }
 
-.fade-enter-active {
-  animation: fade-in .5s;
+.form-container.fade-enter-active {
+  animation: fade-in-right .5s;
 }
 
-.fade-leave-active {
-  animation: fade-in .5s reverse;
+.form-container.fade-leave-active {
+  animation: fade-in-right .5s reverse;
 }
 
-@keyframes fade-in {
+.success-container.fade-enter-active {
+  animation: fade-in-left .5s;
+}
+
+.success-container.fade-leave-active {
+  animation: fade-in-left .75s reverse;
+}
+
+@keyframes fade-in-left {
   0% {
     opacity: 0;
-    transform: translate3d(0, 10px, 0);
+    transform: translate3d(15px, 0, 0);
+  }
+  
+  100% {
+    opacity: 1;
+    transform: translate3d(0, 0, 0);
+  }
+}
+
+@keyframes fade-in-right {
+  0% {
+    opacity: 0;
+    transform: translate3d(-15px, 0, 0);
   }
   
   100% {

@@ -1,6 +1,8 @@
 import sheets from '~/services/google-sheets'
 import Vue from 'vue'
 
+const SUCCESS_TIMEOUT_DURATION = 4000
+
 export interface FormSubmissionServiceState {
   submissionSuccess: true | null
   submissionRequest: Promise<any> | null
@@ -40,7 +42,7 @@ export class FormSubmissionService {
   public onSubmissionSuccess = (success: true) => {
     this.state.submissionRequest = null
     this.state.submissionSuccess = success
-    this.state.submissionSuccessTimeout = window.setTimeout(this.onSubmissionReset, 2000)
+    this.state.submissionSuccessTimeout = window.setTimeout(this.onSubmissionReset, SUCCESS_TIMEOUT_DURATION)
   }
 
   public onSubmissionFailure = (error: Error) => {
