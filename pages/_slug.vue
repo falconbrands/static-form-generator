@@ -20,7 +20,7 @@
               </div>
               <div class="field submit">
                 <div class="control">
-                  <button class="button is-fullwidth" :class="buttonClass">Submit</button>
+                  <button class="button is-black is-fullwidth" :class="buttonClass">Submit</button>
                 </div>
               </div>
             </form>
