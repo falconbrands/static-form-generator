@@ -35,7 +35,10 @@ const config: NuxtConfiguration = {
       return routes
     }
   },
-  env: dotenv.config().parsed,
+  env: {
+    GOOGLE_SHEETS_URL: `${process.env.GOOGLE_SHEETS_URL}`,
+    ...dotenv.config().parsed,
+  },
 }
 
 export default config

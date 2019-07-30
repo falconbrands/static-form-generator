@@ -1,9 +1,10 @@
 <template>
   <div class="form-page">
     <div class="art section is-hidden-mobile" :style="artStyles">
-      <img class="logo" v-if="config.logo" :src="config.logo"/>
+      
     </div>
     <div class="contents section">
+      <img class="logo" v-if="config.logo" :src="config.logo"/>
       <transition name="fade" mode="out-in" appear>
         <div class="content form-container" key="form" v-if="!state.submissionSuccess">
           <h1 class="title is-size-3 is-size-2-widescreen">{{ config.title }}</h1>
@@ -90,7 +91,6 @@ export default class FormPage extends Vue {
   }
 
   protected mounted () {
-    console.log(this.config)
     this.reset()
   }
 
